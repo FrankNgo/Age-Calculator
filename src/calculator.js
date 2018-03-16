@@ -7,5 +7,6 @@ export class Person {
 
   ageToSeconds() {
     this.newDate = Date.parse(this.date)/1000;
+    return this.newDate;
   }
 }
