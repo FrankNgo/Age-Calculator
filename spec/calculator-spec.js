@@ -47,7 +47,7 @@ describe('Calculator', function() {
   });
 
   it('provides life expectancy for user mercury', function() {
-    let mercurianExpectency = earthExpectency / .24
+    let mercurianExpectency = earthExpectency / .24;
     let convertedAge = Math.abs((Number(mercurianExpectency - testDate.mercurianAge()).toFixed(1)));
     expect(testDate.mercuryLifeExpectency()).toEqual(convertedAge);
   });
@@ -61,7 +61,7 @@ describe('Calculator', function() {
   });
 
   it('provides life expectancy for user venus', function() {
-    let venusianExpectency = earthExpectency / .62
+    let venusianExpectency = earthExpectency / .62;
     let convertedAge = Math.abs((Number(venusianExpectency - testDate.venusianAge()).toFixed(1)));
     expect(testDate.venusLifeExpectency()).toEqual(convertedAge);
   });
@@ -73,4 +73,20 @@ describe('Calculator', function() {
     let convertedAge = Math.abs((Number(venusianAge - venusianExpectency).toFixed(1)));
     expect(olderTestDate.venusLifeExpectency()).toEqual(convertedAge);
   });
+
+  it('provides life expectancy for user mars', function() {
+    let martianExpectency = earthExpectency / 1.88;
+    let convertedAge = Math.abs((Number(martianExpectency - testDate.martianAge()).toFixed(1)));
+    expect(testDate.martianLifeExpectency()).toEqual(convertedAge);
+  });
+
+  it('provides years passed since life expectancy mars', function() {
+    olderTestDate.ageToSeconds();
+    let martianExpectency = earthExpectency / 1.88;
+    let martianAge = olderTestDate.martianAge();
+    let convertedAge = Math.abs((Number(martianAge - martianExpectency).toFixed(1)));
+    expect(olderTestDate.martianLifeExpectency()).toEqual(convertedAge);
+  });
+
+
 });

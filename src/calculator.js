@@ -52,6 +52,7 @@ export class Calculator {
       return Math.abs((Number(mercurianAge - planetExpectancy).toFixed(1)));
     }
   }
+
   venusLifeExpectency() {
     let planetExpectancy = earthExpectency/ .62;
     let venusianAge = this.venusianAge();
@@ -62,6 +63,19 @@ export class Calculator {
     }
     else{
       return Math.abs((Number(venusianAge - planetExpectancy).toFixed(1)));
+    }
+  }
+
+  martianLifeExpectency() {
+    let planetExpectancy = earthExpectency/ 1.88;
+    let martianAge = this.martianAge();
+
+    if(planetExpectancy > martianAge)
+    {
+      return Math.abs((Number(planetExpectancy - martianAge).toFixed(1)));
+    }
+    else{
+      return Math.abs((Number(martianAge - planetExpectancy).toFixed(1)));
     }
   }
 }
