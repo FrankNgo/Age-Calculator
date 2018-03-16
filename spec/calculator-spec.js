@@ -3,6 +3,8 @@ import { Calculator } from './../src/calculator.js'
 describe('Calculator', function() {
 
   const testDate = new Calculator("6/28/1994");
+  const earthExpectency = 100;
+  const olderTestDate = new Calculator("6/28/1800");
 
   it('creates person object with a date in format (MM/DD/YYYY)', function() {
     expect(testDate.date).toEqual("6/28/1994");
@@ -42,5 +44,19 @@ describe('Calculator', function() {
     let age = testDate.dateDifference();
     let convertedAge = age/(365 * 11.86);
     expect(testDate.jovianAge()).toEqual(convertedAge);
+  });
+
+  it('provides life expectancy for user mercury', function() {
+    let mercurianExpectency = earthExpectency / .24
+    let convertedAge = Math.abs((Number(mercurianExpectency - testDate.mercurianAge()).toFixed(1)));
+    expect(testDate.mercuryLifeExpectency()).toEqual(convertedAge);
+  });
+
+  it('provides years passed since life expectancy mercury', function() {
+    olderTestDate.ageToSeconds();
+    let mercurianExpectency = earthExpectency / .24;
+    let mercurianAge = olderTestDate.mercurianAge();
+    let convertedAge = Math.abs((Number(mercurianAge - mercurianExpectency).toFixed(1)));
+    expect(olderTestDate.mercuryLifeExpectency()).toEqual(convertedAge);
   });
 });

@@ -38,4 +38,18 @@ export class Calculator {
     let convertedAge = age/(365 * 11.86);
     return convertedAge;
   }
+
+  mercuryLifeExpectency() {
+    const earthExpectency = 100;
+    let planetExpectancy = earthExpectency/ .24;
+    let mercurianAge = this.mercurianAge();
+
+    if(planetExpectancy > mercurianAge)
+    {
+      return Math.abs((Number(planetExpectancy - mercurianAge).toFixed(1)));
+    }
+    else{
+      return Math.abs((Number(mercurianAge - planetExpectancy).toFixed(1)));
+    }
+  }
 }
