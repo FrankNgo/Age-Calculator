@@ -21,10 +21,17 @@ describe('Calculator', function() {
     expect(testDate.dateDifference()).toEqual(differenceBetweenDates);
   });
 
-  it('convertrs and returns users age in mercurian  years', function() {
+  it('converts and returns users age in mercurian years', function() {
     let testDate = new Calculator("6/28/1994");
     let age = testDate.dateDifference();
     let result = age/(365 * .24);
     expect(testDate.mercurianAge()).toEqual(result);
+  });
+
+  it('convertrs and returns users age in venusian years', function() {
+    let testDate = new Calculator("6/28/1994");
+    let age = testDate.dateDifference();
+    let result = age/(365 * .62);
+    expect(testDate.venusianAge()).toEqual(result);
   });
 });

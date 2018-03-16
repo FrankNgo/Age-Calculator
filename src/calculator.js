@@ -20,4 +20,10 @@ export class Calculator {
     let convertedAge = age/(365 * .24);
     return convertedAge;
   }
+
+  venusianAge () {
+    let age = this.dateDifference();
+    let convertedAge = age/(365 * .62);
+    return convertedAge;
+  }
 }
