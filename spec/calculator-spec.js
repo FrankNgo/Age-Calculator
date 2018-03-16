@@ -6,7 +6,7 @@ describe('Calculator', function() {
   const earthExpectency = 100;
   const olderTestDate = new Calculator("6/28/1800");
 
-  it('creates person object with a date in format (MM/DD/YYYY)', function() {
+  it('creates calculator object with a date in format (MM/DD/YYYY)', function() {
     expect(testDate.date).toEqual("6/28/1994");
   });
 
