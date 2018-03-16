@@ -26,4 +26,16 @@ export class Calculator {
     let convertedAge = age/(365 * .62);
     return convertedAge;
   }
+
+  martianAge () {
+    let age = this.dateDifference();
+    let convertedAge = age/(365 * 1.88);
+    return convertedAge;
+  }
+
+  jovianAge () {
+    let age = this.dateDifference();
+    let convertedAge = age/(365 * 11.86);
+    return convertedAge;
+  }
 }

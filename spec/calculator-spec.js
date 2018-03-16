@@ -34,4 +34,11 @@ describe('Calculator', function() {
     let result = age/(365 * .62);
     expect(testDate.venusianAge()).toEqual(result);
   });
+
+  it('convertrs and returns users age in martian years', function() {
+    let testDate = new Calculator("6/28/1994");
+    let age = testDate.dateDifference();
+    let result = age/(365 * 1.88);
+    expect(testDate.martianAge()).toEqual(result);
+  });
 });
