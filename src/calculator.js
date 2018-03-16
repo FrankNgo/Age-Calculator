@@ -1,3 +1,4 @@
+const earthExpectency = 100;
 export class Calculator {
   constructor(date) {
     this.date = date;
@@ -40,7 +41,6 @@ export class Calculator {
   }
 
   mercuryLifeExpectency() {
-    const earthExpectency = 100;
     let planetExpectancy = earthExpectency/ .24;
     let mercurianAge = this.mercurianAge();
 
@@ -50,6 +50,18 @@ export class Calculator {
     }
     else{
       return Math.abs((Number(mercurianAge - planetExpectancy).toFixed(1)));
+    }
+  }
+  venusLifeExpectency() {
+    let planetExpectancy = earthExpectency/ .62;
+    let venusianAge = this.venusianAge();
+
+    if(planetExpectancy > venusianAge)
+    {
+      return Math.abs((Number(planetExpectancy - venusianAge).toFixed(1)));
+    }
+    else{
+      return Math.abs((Number(venusianAge - planetExpectancy).toFixed(1)));
     }
   }
 }

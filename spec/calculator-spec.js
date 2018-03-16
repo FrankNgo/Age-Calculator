@@ -59,4 +59,18 @@ describe('Calculator', function() {
     let convertedAge = Math.abs((Number(mercurianAge - mercurianExpectency).toFixed(1)));
     expect(olderTestDate.mercuryLifeExpectency()).toEqual(convertedAge);
   });
+
+  it('provides life expectancy for user venus', function() {
+    let venusianExpectency = earthExpectency / .62
+    let convertedAge = Math.abs((Number(venusianExpectency - testDate.venusianAge()).toFixed(1)));
+    expect(testDate.venusLifeExpectency()).toEqual(convertedAge);
+  });
+
+  it('provides years passed since life expectancy venus', function() {
+    olderTestDate.ageToSeconds();
+    let venusianExpectency = earthExpectency / .62;
+    let venusianAge = olderTestDate.venusianAge();
+    let convertedAge = Math.abs((Number(venusianAge - venusianExpectency).toFixed(1)));
+    expect(olderTestDate.venusLifeExpectency()).toEqual(convertedAge);
+  });
 });
