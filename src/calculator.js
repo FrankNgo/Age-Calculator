@@ -66,7 +66,7 @@ export class Calculator {
     }
   }
 
-  martianLifeExpectency() {
+  marsLifeExpectency() {
     let planetExpectancy = earthExpectency/ 1.88;
     let martianAge = this.martianAge();
 
@@ -76,6 +76,19 @@ export class Calculator {
     }
     else{
       return Math.abs((Number(martianAge - planetExpectancy).toFixed(1)));
+    }
+  }
+
+  jupiterLifeExpectency() {
+    let planetExpectancy = earthExpectency/ 11.86;
+    let jovianAge = this.jovianAge();
+
+    if(planetExpectancy > jovianAge)
+    {
+      return Math.abs((Number(planetExpectancy - jovianAge).toFixed(1)));
+    }
+    else{
+      return Math.abs((Number(jovianAge - planetExpectancy).toFixed(1)));
     }
   }
 }
